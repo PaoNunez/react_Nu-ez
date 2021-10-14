@@ -1,0 +1,8 @@
+#main-header {
+  background: rgb(26, 19, 19);
+  color: antiquewhite;
+  display: flex;
+}
+nav a {
+  color: antiquewhite;
+}
