@@ -1,8 +1,38 @@
-#main-header {
-  background: rgb(26, 19, 19);
-  color: antiquewhite;
-  display: flex;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html,
+body {
+  height: 100vh;
+  
+}
+
+#main-header {
+  padding: 0.5rem 1rem;
+  background-color: rgba(119, 26, 10, 0.993);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: rgb(248, 246, 244);
+}
+
 nav a {
   color: antiquewhite;
+}
+footer {
+  margin-top: 450px;
+  padding: 15px;
+  background: rgba(24, 11, 11, 0.918);
+  color: antiquewhite;
+  text-align: center;
+}
+img {
+  border-radius: 50px;
+}
+main{
+  margin-top: 10px;
 }

@@ -1,15 +1,23 @@
-const Header = () => {
+import Nav from "./Nav"
+const Header = (props) => {
+
+
+  //const {nombre, apellido}=props;
+  //const nombre= props.nombre
+  //const apellido= props.apellido
+
+  console.log(props.nombre)
+  console.log(props.apellido)
+  console.log(props.edad)
   return (
-
     <header id="main-header" className="clase1 clase2" >
-      <h1>Tu tienda favorita</h1>
-      <nav>
-        <a href="#">Camisetas</a>
-        <img src="./img/carrito.png" alt="carrito"></img>
-      </nav>
+      
+      <p>Bievenido {props.nombre} {props.apellido}</p>
+     
+      <Nav />
 
 
-    </header>
+    </header >
 
   )
 }
