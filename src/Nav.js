@@ -1,12 +1,12 @@
 import CartWidget from "./CartWidget"
-import carritoImg from "./img/logo.jpeg"
+import logoImg from "./img/logo.jpeg"
 const Nav = () => {
   return (
 
     <nav>
       <a href="#">Camisetas</a>
       <CartWidget />
-      <img src={carritoImg}></img>
+      <img src={logoImg}></img>
 
 
 

@@ -1,12 +1,10 @@
 import Header from "./Header"
 import Footer from "./Footer"
 import Main from "./Main"
-
+import { useState } from "react"
 const App = () => {
 
-  const contador = 10
 
-  const links = ["link1", "link2"]
 
   const hacerLog = () => {
     console.log("Soy un callback de App")
@@ -14,16 +12,15 @@ const App = () => {
 
   return (
     <>
-      <Header
-        nombre="Paola"
-        apellido="Nuñez"
-        edad={34}
-        links={links}
-        callback={hacerLog}
-      />
-      <Main titulo="T&sh Tu tienda favorita" contador={contador} />
+      <Header />
+      <Main titulo="T&sh Tu tienda favorita">
+        <p>Conoce todos nuestros productos</p>
+        <p>Pidelos en tu tienda virtual en cualquier lugar del pais</p>
+      </Main>
+      <button onClick={hacerLog}>Agregar al carrito</button>
       <Footer />
     </>
+
   )
 }
 
