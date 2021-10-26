@@ -7,12 +7,11 @@
 html,
 body {
   height: 100vh;
-  
 }
 
 #main-header {
   padding: 0.5rem 1rem;
-  background-color: rgba(119, 26, 10, 0.993);
+  background-color: rgba(54, 40, 38, 0.993);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,6 +32,13 @@ footer {
 img {
   border-radius: 50px;
 }
-main{
+main {
   margin-top: 10px;
+}
+#carrito {
+  color: rgb(235, 23, 16);
+}
+#btn {
+  color: rgb(255, 17, 0);
+  background: rgb(17, 16, 17);
 }

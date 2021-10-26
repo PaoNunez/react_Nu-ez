@@ -2,7 +2,7 @@ import Nav from "./Nav"
 const CartWidget = () => {
   return (
 
-    <span className="material-icons">
+    <span id="carrito" className="material-icons">
       shopping_cart</span>
 
   )

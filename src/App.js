@@ -1,7 +1,7 @@
 import Header from "./Header"
 import Footer from "./Footer"
 import Main from "./Main"
-import { useState } from "react"
+
 const App = () => {
 
 
@@ -18,7 +18,9 @@ const App = () => {
         <p>Pidelos en tu tienda virtual en cualquier lugar del pais</p>
       </Main>
       <button onClick={hacerLog}>Agregar al carrito</button>
+     
       <Footer />
+     
     </>
 
   )

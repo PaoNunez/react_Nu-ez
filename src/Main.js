@@ -1,5 +1,5 @@
 
-
+import ItemCount from "./ItemCount"
 const Main = ({ titulo, children }) => {
 
   const tituloEnMayuscula = titulo.toUpperCase()
@@ -13,9 +13,9 @@ const Main = ({ titulo, children }) => {
         {children}
         <hr></hr>
         <p>Revisa nuestro catálogo de camisetas y selecciona tu favorita</p>
-
       </main>
-     
+     <ItemCount/>
+
     </>
   )
 }
