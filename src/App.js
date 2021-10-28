@@ -1,6 +1,7 @@
 import Header from "./Header"
 import Footer from "./Footer"
 import Main from "./Main"
+import ItemListContainer from "./ItemListContainer"
 
 const App = () => {
 
@@ -18,8 +19,10 @@ const App = () => {
         <p>Pidelos en tu tienda virtual en cualquier lugar del pais</p>
       </Main>
       <button onClick={hacerLog}>Agregar al carrito</button>
-     
+     <ItemListContainer/>
       <Footer />
+      
+
      
     </>
 

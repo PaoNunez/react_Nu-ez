@@ -42,3 +42,7 @@ main {
   color: rgb(255, 17, 0);
   background: rgb(17, 16, 17);
 }
+#photo{
+  display: flex;
+  
+}
