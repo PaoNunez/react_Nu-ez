@@ -42,7 +42,11 @@ main {
   color: rgb(255, 17, 0);
   background: rgb(17, 16, 17);
 }
-#photo{
+#product {
   display: flex;
-  
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0px 15px;
+   border: 2px solid rgb(184, 28, 28);
+   padding: 10px;
 }

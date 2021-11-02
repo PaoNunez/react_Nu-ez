@@ -1,10 +1,10 @@
 import CartWidget from "./CartWidget"
-
+import { Link } from "react-router-dom"
 const Nav = () => {
   return (
 
     <nav>
-      <a href="productos.json">Camisetas</a>
+      <Link to="productos.json">Camisetas</Link>
       <CartWidget />
       <img src="./img/logo.jpeg" alt="logotipo"></img>
 
