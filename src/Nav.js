@@ -1,16 +1,23 @@
+import React from "react";
+import { NavLink, Route } from 'react-router-dom'
 import CartWidget from "./CartWidget"
 import { Link } from "react-router-dom"
+import { Navbar } from "react-bootstrap"
+
 const Nav = () => {
   return (
 
-    <nav>
-      <Link to="productos.json">Camisetas</Link>
+    <Navbar >
+      <Link to="/productos">
+        <p>Productos</p>
+      </Link>
       <CartWidget />
-      <img src="./img/logo.jpeg" alt="logotipo"></img>
+      <NavLink to="/" exact >
+        <img src="./img/logo.jpeg" alt="logotipo"></img>
+      </NavLink>
 
 
-
-    </nav>
+    </Navbar>
 
 
   )

@@ -1,9 +1,10 @@
+import { Container } from "react-bootstrap"
 const Footer = () => {
   return (
-    <footer>
+    <Container fluid as="footer">
       <p>Copyright &copy;</p>
 
-    </footer>
+    </Container>
 
   )
 }

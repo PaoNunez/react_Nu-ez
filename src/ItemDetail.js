@@ -1,4 +1,4 @@
-
+import Counter from "./Counter"
 import productos from "./productos.json"
 
 
@@ -16,6 +16,7 @@ const ItemDetail = () => {
 
         </>
       )}
+      <Counter />
     </div>
 
   )

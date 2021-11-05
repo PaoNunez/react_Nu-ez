@@ -3,24 +3,26 @@ import productos from "./productos.json"
 
 
 const ItemDetailContainer = () => {
-  const [product, setproduct] = useState([]);
+  const [user, setUser] = useState([]);
 
   useEffect(() => {
-    getProducts().then((productos) => {
-      setproduct(productos)
+    getInfo().then((productos) => {
+      setUser(productos)
+
     })
   }, [])
 
   return (
 
     <div id="product">
-      <ItemDetail product={product} />
+
+      <ItemDetail product={user} />
 
     </div>
 
   )
 }
-let getProducts= new Promise(cb => {
+let getInfo = new Promise(cb => {
   setTimeout(() => {
     cb(productos)
   }, 2000)

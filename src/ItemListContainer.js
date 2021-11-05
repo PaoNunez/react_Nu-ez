@@ -1,29 +1,37 @@
-import { useEffect, useState } from "react";
+
+import Item from "./Item"
+import { useState, useEffect } from "react";
 import productos from "./productos.json"
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
-  const [users, setUsers] = useState([]);
-  getUserData.
-    then((productos) => {
-      setUsers(productos)
+  const [product, setproduct] = useState([]);
+  const params = useParams();
+  useEffect(() => {
+    getProducts.then((productos) => {
+      if (productos.id === parseInt(params.id)) {
+        setproduct(productos)
+
+      }
     })
+  }, [params.id, getProducts])
+
   return (
-    <div id="photo">
-      {users.map(user =>
-        <div>
-          {user.description}
-          {user.price}
-          <img src={user.image}></img>
-        </div>)}
+
+    <div id="product">
+
+      <Item product={product} />
+
     </div>
+
   )
 }
-
-let getUserData = new Promise(cb => {
+let getProducts = new Promise(cb => {
   setTimeout(() => {
     cb(productos)
   }, 2000)
 
 });
+
 
 export default ItemListContainer

@@ -1,6 +1,6 @@
-import { useState} from 'react'
+import { useState } from 'react'
 
-const Counter = () => {
+const Counter = ({ onClick }) => {
 
   const [contador, setContador] = useState(0)
 
@@ -18,9 +18,11 @@ const Counter = () => {
 
   return (
     <div>
-      <p>El contador va : {contador} </p>
+      
       <button onClick={sumar} className="material-icons">add</button>
       <button onClick={restar} className="material-icons">remove</button>
+      <p>Cantidad: {contador} </p>
+      <button onClick={() => onClick(contador)} id="btn">Agregar al carrito</button>
     </div>
   )
 }
