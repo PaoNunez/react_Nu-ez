@@ -9,7 +9,7 @@ body {
   height: 100vh;
 }
 
-#main-header {
+.nav-header {
   height: 100;
   background-color: rgba(179, 49, 29, 0.993);
   display: grid;

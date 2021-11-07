@@ -1,27 +1,27 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "price": "$ 18",
     "description": "Legends ",
     "image": "img/camisetas/azul.jpeg",
     "alt": "azul"
   },
   {
-    "id": 2,
+    "id": 1,
     "price": "$ 22",
-    "description": "Estampe Bicicleta,",
+    "description": "Estampe Bicicleta",
     "image": "img/camisetas/bici.jpeg",
     "alt": "bicicleta"
   },
   {
-    "id": 3,
+    "id": 2,
     "price": "$ 15",
     "description": "Deportiva ",
     "image": "img/camisetas/depor.jpeg",
     "alt": "deportiva"
   },
   {
-    "id": 4,
+    "id": 3,
     "price": "$ 19.5",
     "description": "Estampe Goku",
     "image": "img/camisetas/goku.jpeg",

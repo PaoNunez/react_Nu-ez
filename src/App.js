@@ -1,24 +1,25 @@
-import Header from "./Header"
-import Footer from "./Footer"
-import Main from "./Main"
-import ItemListContainer from "./ItemListContainer"
-
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Header from "./Header"
+import MainItemListContainer from "./MainItenListContainer"
+import Footer from "./Footer"
+import Category from "./Category"
+import MainItemDetailContainer from "./MainItemDetailContainer"
+
+
 const App = () => {
+    return (
+        <BrowserRouter>
+            <Header />
+            <Switch>
+                <Route exact path="/" component={MainItemListContainer}></Route>
+                <Route exact path="/categorias" component={Category}></Route>
+                <Route path="/categorias/:description" component={MainItemListContainer}></Route>
+                <Route path="/producto/:id" component={MainItemDetailContainer}></Route>
+            </Switch>
+            <Footer />
+        </BrowserRouter>
 
-  return (
-    <BrowserRouter>
-      <Header />
-      <Main titulo="T&sh Tu tienda favorita">
-        <p>Conoce todos nuestros productos</p>
-      </Main>
-
-      <Switch>
-        <Route path="/" component={ItemListContainer} exact />
-        <Route path="/Inicio/:id" component={ItemListContainer} />
-      </Switch>
-      <Footer />
-    </BrowserRouter>
-  )
+    )
 }
+
 export default App

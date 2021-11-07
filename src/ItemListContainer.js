@@ -1,37 +1,46 @@
+import { useEffect, useState } from "react"
+import { useParams } from "react-router"
+import ItemList from "./ItemList"
+import productos_Json from "./productos.json"
 
-import Item from "./Item"
-import { useState, useEffect } from "react";
-import productos from "./productos.json"
-import { useParams } from "react-router-dom";
+const ItemListContainer = ({contador}) => {
+    const {price}=useParams()
 
-const ItemListContainer = () => {
-  const [product, setproduct] = useState([]);
-  const params = useParams();
-  useEffect(() => {
-    getProducts.then((productos) => {
-      if (productos.id === parseInt(params.id)) {
-        setproduct(productos)
+    
+    const [productos, setProductos] = useState([])
+    useEffect(() => {
+        let promesa
 
-      }
-    })
-  }, [params.id, getProducts])
+        if(price){
 
-  return (
+            promesa= new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(productos_Json.filter(prod=>prod.price== price))
+                },2000)
+                
+            })  
+        }
+        else{
+            promesa= new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(productos_Json)
+                },2000)
+                
+            })  
+        }
+        promesa.then(resolve=> {
+            setProductos(resolve)
+        })
+                
+    },[price])
+    
 
-    <div id="product">
-
-      <Item product={product} />
-
-    </div>
-
-  )
+    return (
+        <div>
+            <span className="count">{contador}</span>
+            {productos.length===0?<div className="ring">Cargando<span className="span_ring"></span></div>:<ItemList items={productos}/>}
+        </div>
+    )
 }
-let getProducts = new Promise(cb => {
-  setTimeout(() => {
-    cb(productos)
-  }, 2000)
-
-});
-
 
 export default ItemListContainer

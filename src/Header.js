@@ -1,19 +1,12 @@
-import { Navbar } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import Nav from "./Nav"
+
 const Header = () => {
-
-
-  
   return (
-    <Navbar bg="light" expand="lg">
-    <header id="main-header" className="clase1 clase2" >
-      <p>Bievenidos</p>
-
+    <header className="header">
+      <Link to="/" className="title-logo">Mi E-Commerce</Link>
       <Nav />
-
-    </header >
-    </Navbar>
+    </header>
   )
 }
-
 export default Header

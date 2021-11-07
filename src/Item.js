@@ -1,27 +1,17 @@
-import Counter from "./Counter"
-import productos from "./productos.json"
-
-
-const Item = () => {
-
-  return (
-    <div>
-      {productos.map(ItemProducto =>
-        < div id="card">
-          <p key={ItemProducto.id}>
-            <h1>{ItemProducto.description}</h1>
-            <img key={ItemProducto.id} src={ItemProducto.image} alt="camiseta"></img>
-            <h3>{ItemProducto.price}</h3>
-          </p>
-
-          <Counter />
+import { Link } from "react-router-dom"
+const Item = ({ item }) => {
+    return (
+        <div className="item">
+            <div className="card-item">
+                <img src={item.image} width="240" height="250" alt="camiseta" />
+                <p>{item.description}</p>
+                <p>${item.price}</p>
+                <Link to={`/producto/${item.id}`}><button id={item.id}>Ver detalle del producto</button></Link>
+            </div>
         </div>
-      )}
+    )
 
-    </div>
 
-  )
 }
-
 
 export default Item

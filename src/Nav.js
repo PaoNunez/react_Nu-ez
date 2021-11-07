@@ -1,26 +1,18 @@
-import React from "react";
-import { NavLink, Route } from 'react-router-dom'
-import CartWidget from "./CartWidget"
 import { Link } from "react-router-dom"
-import { Navbar } from "react-bootstrap"
-
+import CartWidget from "./CartWidget"
 const Nav = () => {
   return (
-
-    <Navbar >
-      <Link to="/productos">
-        <p>Productos</p>
-      </Link>
-      <CartWidget />
-      <NavLink to="/" exact >
-        <img src="./img/logo.jpeg" alt="logotipo"></img>
-      </NavLink>
-
-
-    </Navbar>
-
-
+    <>
+      <nav className="nav-header">
+        
+         <Link to="/">Inicio</Link>
+         <Link to="/categorias">Categorias</Link>
+       
+        <CartWidget />
+      </nav>
+    </>
   )
 }
+
 export default Nav
 
