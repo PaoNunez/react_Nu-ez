@@ -3,10 +3,10 @@ const Item = ({ item }) => {
     return (
         <div className="item">
             <div className="card-item">
-                <img src={item.image} width="240" height="250" alt="camiseta" />
                 <p>{item.description}</p>
+                <img src={item.image} alt="camiseta" />
                 <p>${item.price}</p>
-                <Link to={`/producto/${item.id}`}><button id={item.id}>Ver detalle del producto</button></Link>
+                <Link to={`/producto/${item.id}`}><button id={item.id}>Ver detalle...</button></Link>
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import ItemListContainer from "./ItemListContainer"
 const Main = () => {
     return (
         <main className="comp-main">
-            <ItemListContainer contador={0}/>
+            <ItemListContainer />
         </main>
             
     )

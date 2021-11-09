@@ -4,7 +4,7 @@ import Nav from "./Nav"
 const Header = () => {
   return (
     <header className="header">
-      <Link to="/" className="title-logo">Mi E-Commerce</Link>
+      <p>Mi E-Commerce</p>
       <Nav />
     </header>
   )

@@ -4,9 +4,7 @@ const Counter = ({ onClick }) => {
 
   const [contador, setContador] = useState(0)
 
-  /* useEffect(()=>{
-      console.log("Se reejecuto el contador")
-  },[]) */
+  
 
   const sumar = () => {
     setContador(contador + 1)

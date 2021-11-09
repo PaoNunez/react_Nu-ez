@@ -1,17 +1,15 @@
-import ItemCount from './ItemCount';
+import Counter from './Counter';
 const ItemDetail = ({ item }) => {
+    console.log(item.image)
     return (
-        <main className="main_ItemDetail">
-            <div className="img_ItemDetail">
-                <img src={item.image} alt="item" /> 
-            </div>
-            <div className="info_ItemDetail">
-                <h3>{item.description}</h3>
-                <p className="p_description">{item.description}</p>
-                <p className="p_price">${item.price}</p>
-                <ItemCount stock={3} initial={1} onAdd={() => { console.log("Tocaste el boton de comprar") }} />
-            </div>
-        </main>
+       
+        < div className = "info_ItemDetail" >
+            <h3>{item.description}</h3>
+            <img src={item.image} alt="camiseta" />
+            <p className="p_price">${item.price}</p>
+            <Counter />
+        </div >
+
     )
 }
 

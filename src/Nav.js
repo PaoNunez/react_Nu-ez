@@ -4,7 +4,7 @@ const Nav = () => {
   return (
     <>
       <nav className="nav-header">
-        
+        <img src="/img/logo.jpeg" alt="logo" id="logo" />
          <Link to="/">Inicio</Link>
          <Link to="/categorias">Categorias</Link>
        
