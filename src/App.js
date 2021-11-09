@@ -4,7 +4,7 @@ import MainItemListContainer from "./MainItenListContainer"
 import Footer from "./Footer"
 import Category from "./Category"
 import MainItemDetailContainer from "./MainItemDetailContainer"
-
+import ItemComprar from "./ItemComprar"
 
 const App = () => {
     return (
@@ -15,6 +15,7 @@ const App = () => {
                 <Route exact path="/categorias" component={Category}></Route>
                 <Route path="/categorias/:description" component={MainItemListContainer}></Route>
                 <Route path="/producto/:id" component={MainItemDetailContainer}></Route>
+                <Route path="/comprar/:id" component={ItemComprar}></Route>
             </Switch>
             <Footer />
         </BrowserRouter>

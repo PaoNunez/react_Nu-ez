@@ -1,26 +1,33 @@
 import { useState } from 'react'
 
-const Counter = ({ onClick }) => {
 
-  const [contador, setContador] = useState(0)
+const Counter = ({ onAdd, onDel }) => {
+const [contador, setContador] = useState(0)
 
-  
+
 
   const sumar = () => {
-    setContador(contador + 1)
+    const counter = contador + 1
+    setContador(counter)
+    onAdd(counter)
+
+
   }
 
   const restar = () => {
-    setContador(contador - 1)
+    const counter = contador - 1
+    setContador(counter)
+    onDel(counter)
+
   }
 
   return (
     <div>
-      
+
       <button onClick={sumar} className="material-icons">add</button>
       <button onClick={restar} className="material-icons">remove</button>
       <p>Cantidad: {contador} </p>
-      <button onClick={() => onClick(contador)} id="btn">Agregar al carrito</button>
+      <button id="btn">Agregar al carrito</button>
     </div>
   )
 }
