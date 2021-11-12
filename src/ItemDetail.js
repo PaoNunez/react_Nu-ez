@@ -1,17 +1,25 @@
 import Image from './components/Image';
 import Counter from './Counter';
+import { useHistory } from "react-router-dom"
+import { contexto } from "./CartContext"
+import { useContext } from "react"
 
 
-function onAdd(quantityToAdd) {
-    console.log(quantityToAdd)
-}
-
-function onDel(quantityToDel) {
-    console.log(quantityToDel)
-}
 
 const ItemDetail = ({ item }) => {
-    //console.log(item.image)
+    //agregarProducto(item.image)
+    const { push } = useHistory();
+    const { agregarProducto } = useContext(contexto);
+    function onAdd(cantidad) {
+        agregarProducto(item, cantidad)
+        push("./cart")
+    }
+
+    function onDel(cantidad) {
+        agregarProducto(item, cantidad)
+        push("./cart")
+    }
+
     return (
 
         < div className="info_ItemDetail" >
