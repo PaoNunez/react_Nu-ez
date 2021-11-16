@@ -4,7 +4,7 @@ const Item = ({ item }) => {
     return (
         <div className="item">
             <div className="card-item">
-                <p>{item.description}</p>
+                <p>{item.tittle}</p>
                 <Image
                     path={item.image}
                     alt={item.alt} />

@@ -30,10 +30,10 @@ const ItemDetailContainer = () => {
     })
     return (
         <div>
-            {producto.length==0?<div className="ring">Cargando<span className="span_ring"></span></div>:producto.map(prod => {
+            {producto.length==0?<div className="ring">Cargando...<span className="span_ring"></span></div>:producto.map(prod => {
                 return <ItemDetail item={prod}/>
             })}
-            
+                
         </div>
 
     )

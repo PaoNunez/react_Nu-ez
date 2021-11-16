@@ -5,21 +5,21 @@ import Footer from "./Footer"
 import Category from "./Category"
 import MainItemDetailContainer from "./MainItemDetailContainer"
 import Cart from "./Cart"
-import CartContext from "./CartContext"
+import CustonProvider from "./context/CartContext"
 const App = () => {
     return (
         <BrowserRouter>
-            <CartContext >
+            <CustonProvider >
                 <Header />
                 <Switch>
                     <Route exact path="/" component={MainItemListContainer}></Route>
-                    <Route exact path="/categorias" component={Category}></Route>
-                    <Route path="/categorias/:description" component={MainItemListContainer}></Route>
+                    <Route exact path="/camisetas" component={Category}></Route>
+                    <Route path="/camisetas/:description" component={MainItemListContainer}></Route>
                     <Route path="/producto/:id" component={MainItemDetailContainer}></Route>
                     <Route path="/cart/" component={Cart}></Route>
                 </Switch>
                 <Footer />
-            </CartContext >
+            </CustonProvider  >
         </BrowserRouter>
 
     )

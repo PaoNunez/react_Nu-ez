@@ -6,7 +6,7 @@ const Nav = () => {
       <nav className="nav-header">
         <img src="/img/logo.jpeg" alt="logo" id="logo" />
          <Link to="/">Inicio</Link>
-         <Link to="/categorias">Categorias</Link>
+         <Link to="/camisetas">Camisetas</Link>
        
         <CartWidget />
       </nav>

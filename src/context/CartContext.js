@@ -6,24 +6,29 @@ export const { Provider } = contexto;
 
 export const CustonProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const cartCopiado = [...cart];
+  const agregarProducto = (prod, cantidad) => {
 
-  const agregarProducto = (item, cantidad) => {
-    if (!isInCart(item.id)) {
-      console.log("agregando producto");
-      setCart([...cart, { // creo un nuevo objeto a partir de item y cantidad
-        id: item.id,
-        title: item.title,
-        price: item.price,
-        description: item.description,
-        img: item.img,
-        marca: item.marca,
+
+    if (!isInCart(prod.id)) {
+      //console.log("agregando producto");
+      cartCopiado.push({ // creo un nuevo objeto a partir de prod y cantidad
+        id: prod.id,
+        tittle: prod.tittle,
+        price: prod.price,
+        description: prod.description,
+        image: prod.image,
+        alt: prod.alt,
         cantidad: cantidad
-      }]);
+
+      });
     }
+
+
     else {
-      console.log("actualizando producto");
-      const producto_En_Cart = cart.map(producto => {
-        if (producto.id === item.id) {
+      //console.log(" producto actual");
+      const producto_En_Cart = cartCopiado.map(producto => {
+        if (producto.id === prod.id) {
           producto.cantidad += cantidad;
         }
         return producto; //retorna el objeto producto
@@ -33,16 +38,18 @@ export const CustonProvider = ({ children }) => {
 
   }
   const isInCart = (id) => {
-    return cart.find(cartItem => cartItem.id === id);
+    const producto_En_Carrito = cartCopiado.some(producto => producto.id === id);
+    console.log(producto_En_Carrito);
+    return producto_En_Carrito
   }
 
-  const eliminarProducto = (itemId) => {
-    const producto_Removido = cart.filter(producto => producto.id !== itemId);
+  const eliminarProducto = (prodId) => {
+    const producto_Removido = cart.filter(producto => producto.id !== prodId);
     setCart(producto_Removido);
     return
-    <p>(producto)</p>
-    
-    
+
+
+
 
   }
   const vaciarCarrito = () => {
