@@ -3,11 +3,11 @@ import { useContext } from "react"
 
 const Cart = () => {
   const { cart } = useContext(contexto)
-  
+
 
   return (
     <main className="cart">
-      {cart.length == 0 ? <p>Tu carrito esta vacio</p> :
+      {cart.length == 0 ? <p>Carrito  vacio</p> :
         <table>
           <thead>
             <tr>
@@ -22,7 +22,7 @@ const Cart = () => {
               <tbody>
                 <tr key={producto.id}>
                   <td>
-                    <img src={producto.image} width="130" height="110" alt="camiseta" /></td>
+                    <img src={producto.image} alt="camiseta" /></td>
                   <td>{producto.tittle}</td>
                   <td>{producto.cantidad}</td>
                   <td>${producto.price}</td>
