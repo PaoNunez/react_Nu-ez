@@ -1,39 +1,38 @@
 import { useState, useEffect } from "react"
-import productos_JSON from "./productos.json"
-import ItemDetail from "./ItemDetail"
+//import productos_JSON from "./productos.json"
 import { useParams } from "react-router"
+import { firestore } from "./firebase" // base de datos
+import ItemDetail from "./ItemDetail"
+
+
 const ItemDetailContainer = () => {
-    const {id} = useParams() 
+    const arrayProducts = []
+    const { id } = useParams();
+    //console.log(id)
     const [producto, setProducto] = useState([])
     useEffect(() => {
-        if(id){
-            promesa
-            .then(data => {
-                setTimeout(() => {
-                    getItem(data.filter(item => item.id == id))
-                }, 2000)
+        const db = firestore
+
+        const collection = db.collection("products")
+
+        const query = collection.doc(id)
+
+        const promesa = query.get()
+        promesa
+            .then(doc => {
+                arrayProducts.push(doc.data())
+                setProducto(arrayProducts)
             })
-        }
-        else{
-            promesa
-            .catch(()=>{
-                console.log("Error")
+            .catch(() => {
+                //console.log(" se produjo un error")
             })
-        }
-        
-    }, [])
-    const getItem = (data) => {
-        setProducto(data)
-    }
-    const promesa = new Promise((resolve) => {
-        resolve(productos_JSON)
-    })
+    }, [id])
     return (
         <div>
-            {producto.length==0?<div className="ring">Cargando...<span className="span_ring"></span></div>:producto.map(prod => {
-                return <ItemDetail item={prod}/>
+            {producto.length == 0 ? <div className="ring">Cargando...<span className="span_ring"></span></div> : producto.map(prod => {
+                return <ItemDetail item={prod} />
             })}
-                
+
         </div>
 
     )
