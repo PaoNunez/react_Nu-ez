@@ -22,5 +22,5 @@ const firebaseConfig = {
 //inicializo firebase
 const app = firebase.initializeApp(firebaseConfig);
 
-//me traigo la referencia firestore
+//trayendo referencia de firestore
 export const firestore = firebase.firestore(app);

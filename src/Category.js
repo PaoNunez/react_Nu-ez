@@ -1,14 +1,37 @@
 import { Link } from "react-router-dom"
+import { useState, useEffect } from "react"
+import GetCategory from "./GetCategory"
+import Image from './components/Image';
+
 const Category = () => {
+
+  const [clases, setClases] = useState([])
+
+  useEffect(() => {
+    GetCategory().then(resultado => {
+      setClases(resultado)
+    })
+  }, [])
+
   return (
-    <div>
-      <main className="main_category">
-        <Link to="/camisetas/Legends"><img src="img/camisetas/azul.jpeg" alt="camiseta legends" id="pho"/></Link>
-        <Link to="/camisetas/Bicicleta"><img src="img/camisetas/bici.jpeg" alt="camiseta logo bici" id="pho" /></Link>
-        <Link to="/camisetas/Deportiva"><img src="img/camisetas/depor.jpeg" alt="camiseta deportiva" id="pho" /></Link>
-        <Link to="/camisetas/Goku"><img src="img/camisetas/goku.jpeg" alt="camiseta logo goku" id="pho"/></Link>
-      </main>
-    </div>
+
+    <main >
+      {clases.length == 0 ?
+        <div className="ring">Cargando...<span className="span_ring"></span></div> :
+
+        clases.map(category => {
+
+          return (
+            <Link key={category.id} to={`/camisetas/${category.tittle}`}>
+              <Image
+                path={category.image}
+                alt={category.alt}>
+              </Image>
+            </Link>
+          )
+        })
+      }
+    </main>
   )
 }
 
