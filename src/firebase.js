@@ -5,17 +5,17 @@ import "firebase/firestore";
 
 const firebaseConfig = {
 //credenciales obtenidas de firebase
-  apiKey: "AIzaSyB6dPeXx5zArDoyo61VTFdCUFmc6ZpbZA4",
+  apiKey: process.env.REACT_APP_apiKey,
 
-  authDomain: "my-app-9da22.firebaseapp.com",
+  authDomain: process.env.REACT_APP_authDomain,
 
-  projectId: "my-app-9da22",
+  projectId: process.env.REACT_APP_projectId,
 
-  storageBucket: "my-app-9da22.appspot.com",
+  storageBucket: process.env.REACT_APP_storageBucket,
 
-  messagingSenderId: "768011777806",
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
 
-  appId: "1:768011777806:web:dacb027d61be2772f3c95f"
+  appId: process.env.REACT_APP_appId
 
 
 };
