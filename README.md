@@ -10,8 +10,8 @@ Tu tienda favorita T-shirt es una tienda online diseñada  para poder realizar l
 ***
 #### Para navegar por la tienda:
 Este proyecto tiene una interfaz amigable para que el usuario pueda moverse con facilidad y revisar los productos en venta, a su vez, podrá elegir la camiseta de su preferencia donde al dar click se mostrara el detalle de la misma y podrá realizar su compra, esta se agregara al carrito de compras y una vez finalizada la compra se le indicará su Id.
-![Vista previa](/img/picture1.jpeg)
-![Vista previa](/img/picture2.jpeg)
+![](public/img/picture1.jpeg)
+![](public/img/picture2.jpeg)
 
 ***
 ### Para ejecutar la aplicación debes ingresar el comando:
