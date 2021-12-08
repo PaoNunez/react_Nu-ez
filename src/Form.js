@@ -30,15 +30,16 @@ const Form = () => {
     })
     return total
   }
+  const pedido = {
+    cliente: user,
+    productos: cart,
+    total: ProductosTotales(),
+    fecha: firebase.firestore.Timestamp.fromDate(new Date())
+  }
 
   const confirmacion = (e) => {
     e.preventDefault()
-    const pedido = {
-      cliente: user,
-      productos: cart,
-      total: ProductosTotales(),
-      fecha: firebase.firestore.Timestamp.fromDate(new Date())
-    }
+
     const db = firestore
 
     const collection = db.collection("orders")
@@ -50,20 +51,20 @@ const Form = () => {
         setId(id)
       })
       .catch(() => {
-        // console.log("error")
+
       })
     vaciarCarrito()
   }
   if (id === " ") {
     return (
-      //pedido datos del cliente      
+
       <form id="usuario">
-        <h3>Ingresa tus datos</h3>
+        <h3>Por favor ingresa tus datos</h3>
         <input onChange={handleInputChange} name="nombre" type="text" placeholder="Nombre" required />
         <input onChange={handleInputChange} name="direccion" type="dir" placeholder="Dirección" required />
         <input onChange={handleInputChange} name="mail" type="mail" placeholder="Email" required />
         <input onChange={handleInputChange} name="contacto" type="tel" placeholder="Telefono" required />
-        <button onClick={confirmacion}>Confirmar pedido</button>
+        <button className="btn-confirmar" onClick={confirmacion}>Confirmar compra</button>
       </form>
     )
   }
@@ -71,8 +72,8 @@ const Form = () => {
   else {
     return (
       <div id="usuario" className="form-user">
-        <h3>Gracias por tu compra</h3>
-        <p>Tu orden se registró con éxito</p>
+        <h2>Gracias por preferirnos</h2>
+        <p>Tu orden se registró con éxito tu id de compra es: {id}</p>
         <Link to="/"><button>Volver al inicio</button></Link>
       </div>
 

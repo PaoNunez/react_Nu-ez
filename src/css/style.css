@@ -5,19 +5,19 @@
 }
 
 html,
-body {
+body,
+#root {
   height: 100vh;
- 
-  
+  background: rgb(252, 249, 246);
 }
-#logo{
+#logo {
   height: 105px;
   width: 105px;
 }
 .nav-header {
   padding: 2px;
   height: 100;
-  background-color: rgba(179, 49, 29, 0.993);
+  background: rgba(0, 0, 0, 0.89);
   display: grid;
   grid-template-columns: auto auto auto auto;
   align-items: center;
@@ -33,6 +33,9 @@ nav a {
   font-size: 30px;
   color: black;
 }
+main {
+  flex-grow: 3;
+}
 footer {
   margin-top: 450px;
   padding: 15px;
@@ -45,44 +48,109 @@ img {
   height: 200px;
   width: 200px;
 }
-.comp-main {
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: auto auto auto;
+.item {
   text-align: center;
   font-family: cursive;
   font-weight: 900;
-  font-size: 20px;
-  
-}
-#carrito {
-  color: rgba(238, 234, 234, 0.856);
-}
-
-.item {
+  font-size: 23px;
   display: grid;
-  grid-template-columns: auto;
-  padding: 100px;
+  grid-template-columns: auto auto auto;
   justify-content: center;
   height: 400px;
   width: 250;
   align-content: center;
-  text-align: center;
   margin-top: 25px;
-  margin-left: 50px;
-  margin-right: 1000px;
-  margin-bottom: 60px;
-  border: 2px solid rgb(46, 44, 44);
+
+  border: 2px solid rgb(146, 31, 31);
 }
-#BrowserRouter {
+#carrito {
+  color: rgba(238, 234, 234, 0.856);
+}
+.cart {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  font-weight: 250;
+  font-size: 30px;
+}
+.boton-carritoVacio {
+  border-style: hidden;
+  width: 140px;
+}
+#usuario {
+  margin-top: 70px;
+  margin-left: 150px;
+  margin-right: 150px;
+  font-family: cursive;
+  font-size: 22px;
+  display: grid;
+  padding: 25px;
+}
+.btn-confirmar {
+  margin-top: 25px;
+  padding: 5px;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+.btn-finBuy {
+  margin-top: 25px;
+  padding: 20px;
+  color: rgba(7, 3, 2, 0.877);
+  justify-content: center;
+}
+
+.cart-btn-remove {
+  border-style: groove;
+  position: relative;
+  left: 60px;
+  color: rgb(27, 25, 25);
+}
+.tabla {
+  margin: 130px auto;
+  width: 600px;
+  text-align: center;
+  font-family: cursive;
+  font-size: 20px;
+}
+.cart-thead {
+  border: solid 1px rgb(20, 20, 20);
+}
+.body {
+  margin: 130px auto;
+  width: 600px;
+  text-align: center;
+}
+.cart-body {
+  border: solid 1px rgb(20, 20, 20);
+  text-align: center;
+}
+.tarjeta {
+  margin: 50px auto;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  font-family: cursive;
+  font-size: 25px;
+ 
+}
+.btn-counter {
+  margin-left: 15px;
+  margin-right: 25px;
+}
+.category {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+  padding: 100px;
+}
+h2 {
+  font-family: cursive;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.item1 {
   display: grid;
   grid-template-columns: auto auto;
-  
-}
-.main_category {
-  margin-top: 100px;
-}
-#pho {
-  margin-left: 75px;
-  margin-right: 55px;
+  margin-left: 25px;
+  margin-right: 25px;
 }

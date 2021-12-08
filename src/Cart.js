@@ -6,27 +6,30 @@ import { useHistory } from "react-router"
 
 
 const Cart = () => {
-  const { cart, eliminarProducto } = useContext(contexto)
+  const { cart, borrarProducto } = useContext(contexto)
   const { push } = useHistory()
   const [ordenar, setOrdenar] = useState(false)
   const finBuy = () => {
     setOrdenar(true)
   }
+
   return (
-    <main className="cart">
-      {cart.length == 0 ? <div className="carritoVacio">
-        <div>
-
+    <main >
+      {cart.length ===0 ? <div className="carritoVacio">
+        <div className="cart">
           <p>Carrito vacio</p>
-
         </div>
+
         <div className="boton-carritoVacio">
           <Link to="/"><button>Volver a mis productos</button></Link>
         </div>
-
+       
       </div> :
-        <table id="tabla" >
-          <thead >
+      
+       
+        <table className="tabla" >
+          
+          <thead className="cart-thead">
             <tr >
               <th>Producto</th>
               <th>Nombre</th>
@@ -36,18 +39,18 @@ const Cart = () => {
           </thead>
           {cart.map(producto => {
             const sacarProducto = () => {
-              eliminarProducto(producto.id)
+              borrarProducto(producto.id)
             }
 
             return (
-              <tbody id="body">
-                <tr key={producto.id}>
-                  <th>
+              <tbody className="body" >
+                <tr key={producto.id} className="cart-thead">
+                  <th className="cart-body">
                     <img src={producto.image} alt="camiseta" />
                   </th>
-                  <th>{producto.tittle}</th>
-                  <th>{producto.cantidad}</th>
-                  <th>${producto.price * producto.cantidad}</th>
+                  <th className="cart-body">{producto.tittle}</th>
+                  <th className="cart-body">{producto.cantidad}</th>
+                  <th >${producto.price * producto.cantidad}</th>
                   <th>
                     <button onClick={sacarProducto} className="cart-btn-remove">
                       <span class="material-icons">delete</span>
@@ -58,7 +61,7 @@ const Cart = () => {
             )
           })}
           <div >
-            <button onClick={finBuy}>Completar mi compra</button>
+            <button className="btn-finBuy" onClick={finBuy}>Completar mi compra</button>
             {ordenar && push("/form")}
           </div>
         </table>

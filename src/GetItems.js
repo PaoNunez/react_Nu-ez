@@ -1,11 +1,12 @@
-import { firestore } from "./firebase" //acceder a la base de datos
+import { firestore } from "./firebase" 
 
 
 const getItems = (id) => {
   const array = []
-  const baseDatos = firestore;
+  const db = firestore;
 
-  const collection = baseDatos.collection("products");
+  const collection = db.collection("products");
+  
   if (id) {
     const query = collection.where("description", "==", id);
 

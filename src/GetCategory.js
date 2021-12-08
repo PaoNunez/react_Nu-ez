@@ -2,9 +2,9 @@ import { firestore } from "./firebase"
 
 const GetCategory = () => {
   const array = []
-  const baseDatos = firestore
+  const db = firestore
 
-  const collection = baseDatos.collection("category")
+  const collection = db.collection("products")
 
   const promesa = collection.get()
   return (
@@ -12,6 +12,7 @@ const GetCategory = () => {
       resultados.forEach(resultado => {
         array.push(
           {
+            id: resultado.id,
             ...resultado.data()
           }
         )

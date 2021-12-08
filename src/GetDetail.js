@@ -1,10 +1,10 @@
-import { firestore } from "./firebase" // acceso a la base de datos
+import { firestore } from "./firebase"
 
 const getDetail = (id) => {
-  const array = [];
-  const baseDatos = firestore
+  const arrayProductos = [];
+  const db = firestore
 
-  const collection = baseDatos.collection("products")
+  const collection = db.collection("products")
 
   const query = collection.doc(id)
 
@@ -12,13 +12,13 @@ const getDetail = (id) => {
 
   return (
     promesa.then(resultado => {
-      array.push(
+      arrayProductos.push(
         {
           id: resultado.id,
           ...resultado.data()
         }
       )
-      return array;
+      return arrayProductos;
     })
   )
 }

@@ -19,20 +19,15 @@ const ItemDetail = ({ item }) => {
 
     }
     const redireccionar = () => {
-        push("/cart") // despues de mostrar me redirrecciona a Cart
+        push("/cart")
     }
-    function onDel(cantidad, e) {
-        e.preventDefault();
-        agregarProducto(item, cantidad);
-        setMostrar(!mostrar);
-
-    }
+    
 
     return (
 
-        < div id=" tarjeta" >
+        < div className="tarjeta" >
 
-            <Image
+            <Image className="imagen"
                 path={item.image}
                 alt={item.alt}>
             </Image>
@@ -40,7 +35,7 @@ const ItemDetail = ({ item }) => {
             <h3>{item.tittle}</h3>
             <p>{item.description}</p>
             <Counter onAdd={onAdd} />
-            {mostrar && <button onClick={redireccionar}>Ir a carrito</button>}
+            {mostrar && <button onClick={redireccionar}>Ir al carrito</button>}
         </div >
 
     )

@@ -16,11 +16,11 @@ const Counter = ({ onAdd }) => {
 
 
   return (
-    <div>
-      <p>El contador va : {contador} </p>
+    <div className="btn-counter">
+      <p>Cantidad : {contador} </p>
       <button onClick={sumar} className="material-icons">add</button>
       <button onClick={restar} className="material-icons">remove</button>
-      <button onClick={(e) => onAdd(contador, e)}>Confirmar compra</button>
+      <button className="btn-counter" onClick={(e) => onAdd(contador, e)}>Confirmar compra</button>
     </div>
   )
 }

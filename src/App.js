@@ -13,14 +13,16 @@ const App = () => {
         <BrowserRouter>
             <CustonProvider >
                 <Header />
-                <Switch>
-                    <Route exact path="/" component={ItemListContainer}></Route>
-                    <Route exact path="/camisetas" component={Category}></Route>
-                    <Route path="/camisetas/:description" component={ItemListContainer}></Route>
-                    <Route path="/producto/:id" component={ItemDetailContainer}></Route>
-                    <Route path="/cart/" component={Cart}></Route>
-                    <Route exact path="/form" component={Form}></Route>
-                </Switch>
+                <main>
+                    <Switch>
+                        <Route exact path="/" component={ItemListContainer}></Route>
+                        <Route exact path="/camisetas" component={Category}></Route>
+                        <Route path="/camisetas/:description" component={ItemListContainer}></Route>
+                        <Route path="/producto/:id" component={ItemDetailContainer}></Route>
+                        <Route exact path="/cart/" component={Cart}></Route>
+                        <Route exact path="/form" component={Form}></Route>
+                    </Switch>
+                </main>
                 <Footer />
             </CustonProvider  >
         </BrowserRouter>
